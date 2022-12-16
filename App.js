@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
+import { StyleSheet, Text, SafeAreaView } from "react-native";
+import useLoadAppData from "./src/useLoadAppData";
 
 export default function App() {
+  const [isFirstLaunch, loadApplicationAssets] = useLoadAppData();
+
+  useEffect(() => {}, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <Text>{isFirstLaunch ? "first" : "not first"}</Text>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
