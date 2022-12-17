@@ -5,7 +5,7 @@ import style, {
 } from "../../screens/AccountScreen/style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const CustomLoginBox = ({ type }) => {
+const CustomLoginBox = ({ type, onPress }) => {
   const types = {
     fb: {
       color: localColors.fbColor,
@@ -22,6 +22,11 @@ const CustomLoginBox = ({ type }) => {
       text: "Utwórz konto",
       iconName: "ios-create",
     },
+    login: {
+      color: localColors.appleColor,
+      text: "Zaloguj się",
+      iconName: "ios-create-outline",
+    },
   };
 
   return (
@@ -34,7 +39,7 @@ const CustomLoginBox = ({ type }) => {
           marginRight: 8,
         }}
       />
-      <Text>{types[type].text}</Text>
+      <Text onPress={onPress}>{types[type].text}</Text>
     </View>
   );
 };
