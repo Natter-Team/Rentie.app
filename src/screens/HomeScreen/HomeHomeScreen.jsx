@@ -31,7 +31,7 @@ const HomeHomeScreen = ({navigation}) => {
         <Background>
             <View style={style.container}>
                 <ScrollView style={style.mainScroll}>
-                    <TipBox title="Czy wiedziałeś że..." text="Krzysztof Mącznik ma dwa pesele i urodził się w samolocie bez obywatelstwa" />
+                    <TipBox title="Czy wiedziałeś że..." text="Wypożyczanie sprzętu jest dużo bardziej opłacalne od kupna na własność?" />
                     <Text style={style.header}>Kategorie</Text>
                     <CategoriesCarousel categoryList={categories} navigation={navigation} />
                     <Text style={style.header}>Popularne w okolicy</Text>
