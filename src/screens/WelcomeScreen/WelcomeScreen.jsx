@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
         <View>
             <Text>Popularne w okolicy</Text>
             <ScrollView horizontal={true}>
-                <MiniCard id={"daef"} name={"aaa"} />
+                <MiniCard id={"639d22efc0570043d0e254a5"} name={"aaa"} />
                 <MiniCard/>
                 <MiniCard/>
                 <MiniCard/>
