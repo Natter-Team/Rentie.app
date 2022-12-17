@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Image, Text, View} from "react-native";
+import settings from "../../settings.json";
 
 const MiniCard = (props) => {
+    const {id, name} = props;
     return (
         <View style={{
             backgroundColor: '#fff',
@@ -12,7 +14,7 @@ const MiniCard = (props) => {
             borderRadius: 10,
             marginRight: 20,
         }}>
-            <Image source={props.imgSource} style={{
+            <Image source={{uri: settings.baseURL + '/api/products/' + id + '/image'}} style={{
                 width: 150,
                 height: 150,
             }}/>
@@ -20,7 +22,7 @@ const MiniCard = (props) => {
                 fontSize: 16,
                 height: 50,
                 textAlign: 'left',
-            }}>{props.name}</Text>
+            }}>{name}</Text>
         </View>
     );
 }

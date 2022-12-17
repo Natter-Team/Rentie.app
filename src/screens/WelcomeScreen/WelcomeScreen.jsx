@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
         <View>
             <Text>Popularne w okolicy</Text>
             <ScrollView horizontal={true}>
-                <MiniCard imgSource={'../../../assets/megafon.png'} name={"aaa"} />
+                <MiniCard id={"daef"} name={"aaa"} />
                 <MiniCard/>
                 <MiniCard/>
                 <MiniCard/>
