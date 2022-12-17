@@ -3,7 +3,9 @@ import { screenWidth } from "../../../assets/styles";
 
 export default StyleSheet.create({
     tipBox: {
-        width: screenWidth - 50,
+        marginLeft: 20,
+        marginRight: 20,
+        padding: 20,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",

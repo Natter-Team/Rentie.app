@@ -10,7 +10,7 @@ const HomeScreen = () => {
             <View style={style.container}>
                 <TipBox title="Czy wiedziałeś że..." text="Krzysztof Mącznik ma dwa pesele i urodził sięw samolocie bez obywatelstwa" />
             </View>
-
+            <Text style={style.header}>Kategorie</Text>
         </Background>
     );
 }
