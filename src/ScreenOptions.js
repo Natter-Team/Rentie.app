@@ -1,13 +1,18 @@
 import React from "react";
+import { Image, View, Text } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { colors } from "../assets/styles";
 
 export const screenOptions = ({ route }) => ({
   headerShown: true,
   animation: "slide_from_right",
   tabBarColor: "white",
-  headerTitle: route.name,
-
+  headerTitle: "",
+  headerLeft: (route) => (
+    <Image
+      source={require("../assets/projectLogo.png")}
+      style={{ marginLeft: 16 }}
+    />
+  ),
   tabBarIcon: ({ focused, color }) => {
     let iconName;
 

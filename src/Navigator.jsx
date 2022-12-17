@@ -34,6 +34,7 @@ const Navigator = () => {
         }}
         inactiveColor={colors.inactive}
         activeColor={colors.accentLight}
+        
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Zakładki" component={WelcomeScreen} />
