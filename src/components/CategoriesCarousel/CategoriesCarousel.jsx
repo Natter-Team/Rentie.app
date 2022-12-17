@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style_CategoriesCarousel";
-import {ScrollView, TouchableWithoutFeedback, Text} from "react-native";
+import {ScrollView, TouchableWithoutFeedback, Text, TouchableOpacity} from "react-native";
 
 function CategoryButton({text, last, onPress}) {
     let textStyle = 
@@ -8,9 +8,9 @@ function CategoryButton({text, last, onPress}) {
         : style.categoriesCarouselTextNoMargin;
 
     return (
-        <TouchableWithoutFeedback onPress={onPress}>
+        <TouchableOpacity onPress={onPress}>
             <Text style={textStyle}>{text}</Text>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
     );
 }
 

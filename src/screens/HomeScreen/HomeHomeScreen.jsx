@@ -31,11 +31,11 @@ const HomeHomeScreen = ({navigation}) => {
         <Background>
             <View style={style.container}>
                 <ScrollView style={style.mainScroll}>
-                    <TipBox title="Czy wiedziałeś że..." text="Krzysztof Mącznik ma dwa pesele i urodził sięw samolocie bez obywatelstwa" />
+                    <TipBox title="Czy wiedziałeś że..." text="Krzysztof Mącznik ma dwa pesele i urodził się w samolocie bez obywatelstwa" />
                     <Text style={style.header}>Kategorie</Text>
                     <CategoriesCarousel categoryList={categories} navigation={navigation} />
                     <Text style={style.header}>Popularne w okolicy</Text>
-                    <MiniCardCarousel miniCardList={cards} />
+                    <MiniCardCarousel miniCardList={cards} navigation={navigation} />
                 </ScrollView>
             </View>
         </Background>

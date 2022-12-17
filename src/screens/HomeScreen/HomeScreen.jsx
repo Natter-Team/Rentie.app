@@ -9,6 +9,7 @@ import settings from "../../settings.json";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeHomeScreen from "./HomeHomeScreen";
 import HomeCategoryScreen from "./HomeCategoryScreen";
+import HomeProductScreen from "./HomeProductScreen";
 
 const HomeStack = createNativeStackNavigator();
 const HomeScreen = () => {
@@ -16,6 +17,7 @@ const HomeScreen = () => {
         <HomeStack.Navigator screenOptions={{headerShown: false }}>
             <HomeStack.Screen name="HomeHome" component={HomeHomeScreen} />
             <HomeStack.Screen name="HomeCategory" component={HomeCategoryScreen} />
+            <HomeStack.Screen name="HomeProduct" component={HomeProductScreen} />
         </HomeStack.Navigator>
     )
 }

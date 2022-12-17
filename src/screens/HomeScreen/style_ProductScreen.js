@@ -22,6 +22,13 @@ export default StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "flex-start",
     },
+    textHeader: {
+        alignSelf: "flex-start",
+        marginHorizontal: 0,
+        marginTop: 20,
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
     tags: {
         display: "flex",
         flexDirection: "row",
@@ -37,7 +44,8 @@ export default StyleSheet.create({
         width: screenWidth - 40,
         marginTop: 20,
         backgroundColor: "#fff",
-        padding: 15,
+        paddingHorizontal: 15,
+        paddingBottom: 20,
     },
     tabs: {
         display: "flex",
@@ -51,6 +59,27 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 24,
-        marginLeft: 10,
+        marginLeft: 0,
+        marginBottom: 15,
     },
+    price: {
+        fontSize: 20,
+        paddingTop: 10,
+        flex: 1,
+        alignContent: "center",
+    },
+    priceContainer: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    borrow: {
+        backgroundColor: "#8899cc",
+        fontSize: 20,
+        padding: 10,
+        borderRadius: 6,
+        color: "#fff",
+        marginTop: 10,
+    }
 });
