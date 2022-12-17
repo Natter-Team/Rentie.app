@@ -23,7 +23,7 @@ export default StyleSheet.create({
     borderRadius: 6,
     padding: 10,
     width: screenWidth - 48,
-    marginTop: 25,
+    marginTop: 15,
   },
   horizontalLane: {
     marginTop: 25,
@@ -63,16 +63,11 @@ export default StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#58ABE7",
     marginTop: 16,
-    // textAlignVertical: "middle",
-    fontSize: 20,
   },
   confirmButtonText: {
     color: "white",
-    width: screenWidth - 76,
     textAlign: "center",
-    backgroundColor: "#58ABE7",
     marginTop: 16,
-    // textAlignVertical: "middle",
     fontSize: 20,
   },
 });

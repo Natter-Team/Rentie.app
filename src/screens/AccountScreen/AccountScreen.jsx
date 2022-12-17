@@ -11,6 +11,8 @@ import Background from "../../components/Background/Background";
 import style, { localColors } from "./style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import CustomLoginBox from "../../components/CustomLoginBox/CustomLoginBox";
+import CustomHrLine from "../../components/CustomHrLine/CustomHrLine";
 
 const AccountScreen = (props) => {
   const [password, setPassword] = useState("");
@@ -141,32 +143,12 @@ const AccountScreen = (props) => {
               </Text>
             </TouchableHighlight>
           </KeyboardAvoidingView>
-          <View style={style.horizontalLaneContainer}>
-            <View style={style.horizontalLane}></View>
-            <Text style={style.HrText}>Lub</Text>
-          </View>
-          <View style={style.customLoginBox}>
-            <Ionicons
-              name="logo-facebook"
-              size={28}
-              color={localColors.fbColor}
-              style={{
-                marginRight: 8,
-              }}
-            />
-            <Text>Kontynuuj z Facebookiem</Text>
-          </View>
-          <View style={style.customLoginBox}>
-            <Ionicons
-              name="logo-apple"
-              size={28}
-              color={localColors.appleColor}
-              style={{
-                marginRight: 8,
-              }}
-            />
-            <Text>Kontynuuj z Apple</Text>
-          </View>
+          <CustomHrLine text="Lub" />
+          <CustomLoginBox type="fb" />
+          <CustomLoginBox type="apple" />
+          {/* // custom hr */}
+          <CustomHrLine text="Nie masz konta?" />
+          <CustomLoginBox type="register" styles={{ marginTop: 0 }} />
         </View>
       ) : (
         <Text>Zalogowany</Text>
