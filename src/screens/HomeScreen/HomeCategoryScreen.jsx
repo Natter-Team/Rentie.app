@@ -30,7 +30,7 @@ const HomeCategoryScreen = ({route, navigation}) => {
                         <Text style={{paddingLeft: 20}}>Wyniki: {category}</Text>
                     </View>
                     <Text style={style.header}>Wyniki wyszukiwania</Text>
-                    <CardVerticalCarousel miniCardList={cards} />
+                    <CardVerticalCarousel miniCardList={cards} navigation={navigation} />
                 </ScrollView>
             </View>
         </Background>

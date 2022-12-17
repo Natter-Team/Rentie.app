@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Image, StyleSheet, Text, View, ScrollView} from "react-native";
+import {Image, StyleSheet, Text, View, ScrollView, TouchableOpacity} from "react-native";
 import settings from "../../settings.json";
 
 const style = StyleSheet.create({
@@ -57,7 +57,7 @@ export const CardVerticalPlaceholder = (props) => {
     );
 }
 
-export const CardVerticalCarousel = ({ miniCardList }) => {
+export const CardVerticalCarousel = ({ miniCardList, navigation }) => {
     if (miniCardList.length === 0) {
         return (
             <ScrollView>
@@ -71,7 +71,9 @@ export const CardVerticalCarousel = ({ miniCardList }) => {
         return (
             <View>
                 {miniCardList.map((card, i) => (
-                    <CardVertical id={card.id} key={card.id} name={card.name} price={card.price} />
+                    <TouchableOpacity key={card.id} onPress={() => navigation.push('HomeProduct', { productId: card.id })}>
+                        <CardVertical id={card.id} name={card.name} price={card.price} />
+                    </TouchableOpacity>
                 ))}
             </View>
         )
