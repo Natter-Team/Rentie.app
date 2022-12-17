@@ -24,6 +24,8 @@ export const screenOptions = ({ route }) => ({
       iconName = focused ? "ios-notifications" : "ios-notifications-outline";
     } else if (route.name === "Konto") {
       iconName = focused ? "ios-person" : "ios-person-outline";
+    } else if (route.name === "Koszyk") {
+      iconName = focused ? "ios-cart" : "ios-cart-outline";
     }
 
     return <Ionicons name={iconName} size={28} color={color} />;

@@ -13,7 +13,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import CustomLoginBox from "../../components/CustomLoginBox/CustomLoginBox";
 import CustomHrLine from "../../components/CustomHrLine/CustomHrLine";
-const Login = ({ set, set2 }) => {
+import settings from "../../settings.json";
+
+const Login = ({ set, set2, props }) => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [apiResponse, setApiResponse] = useState("");
@@ -23,14 +25,9 @@ const Login = ({ set, set2 }) => {
     console.log("click");
     set2(false);
   };
-  //   const dataFetch = fetch("http://192.168.38.92:8000/api/register",
-  // {
-  // body: { login: login, password: password, passwordConfirm: password2 }
-
-  // }
 
   const onPressHandler = (e) => {
-    const dataFetch = fetch("http://192.168.38.92:8000/api/auth/login", {
+    const dataFetch = fetch(`${settings.baseURL}/api/auth/login`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({ login: username, password: password }),
@@ -145,7 +142,7 @@ const Login = ({ set, set2 }) => {
         <TouchableHighlight style={style.confirmButton}>
           <Text
             style={style.confirmButtonText}
-            // onPress={(e) => onPressHandler(e)}
+            onPress={(e) => onPressHandler(e)}
           >
             Zaloguj się
           </Text>

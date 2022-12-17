@@ -10,6 +10,7 @@ import defaultStyles, { colors } from "../assets/styles";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AccountScreen from "./screens/AccountScreen/AccountScreen";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import ProductScreen from "./screens/ProductScreen/ProductScreen";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +29,8 @@ const Navigator = () => {
         activeColor={colors.accentLight}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Zakładki" component={WelcomeScreen} />
+        <Tab.Screen name="Zakładki" component={ProductScreen} />
+        <Tab.Screen name="Koszyk" component={WelcomeScreen} />
         <Tab.Screen name="Wypożyczane" component={WelcomeScreen} />
         <Tab.Screen name="Konto" component={AccountScreen} />
       </Tab.Navigator>
