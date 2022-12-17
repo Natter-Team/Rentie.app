@@ -11,15 +11,15 @@ export default StyleSheet.create({
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        alignItems: "center",
+        //alignItems: "center",
         width: screenWidth,
         //height: screenHeight,
     },
     header: {
         alignSelf: "flex-start",
         margin: 20,
-        marginLeft: 5,
         fontSize: 16,
         fontWeight: 'bold',
-    }
+    },
+    
 });
