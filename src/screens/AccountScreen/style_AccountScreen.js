@@ -58,11 +58,11 @@ export default StyleSheet.create({
   confirmButton: {
     color: "white",
     width: screenWidth - 76,
-    height: 52,
-    borderRadius: 12,
+    height: 48,
+    borderRadius: 6,
     textAlign: "center",
     backgroundColor: "#58ABE7",
-    marginTop: 16,
+    marginTop: 12,
   },
   confirmButtonText: {
     color: "white",

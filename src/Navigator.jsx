@@ -16,15 +16,7 @@ const Stack = createNativeStackNavigator();
 const Navigator = () => {
   return (
     <NavigationContainer>
-      {/* <StatusBar /> */}
-      {/* <Stack.Navigator
-        screenOptions={screenOptions}
-        cardStyle={{ backgroundColor: "white" }}
-        initialRouteName="Home"
-      > */}
-      {/* <Stack.Screen name="App" component={TabNav} /> */}
-
-      {/* </Stack.Navigator> */}
+      <StatusBar />
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={screenOptions}
@@ -34,7 +26,6 @@ const Navigator = () => {
         }}
         inactiveColor={colors.inactive}
         activeColor={colors.accentLight}
-        
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Zakładki" component={WelcomeScreen} />
