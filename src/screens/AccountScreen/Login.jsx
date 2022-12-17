@@ -65,6 +65,7 @@ const Login = ({ set, set2, props }) => {
   const updateAsyncStorage = async () => {
     try {
       await AsyncStorage.setItem("token", apiResponse.token);
+      props.navigation.navigate("Home");
     } catch (err) {
       throw err;
     }
@@ -74,10 +75,13 @@ const Login = ({ set, set2, props }) => {
     if (username.length > 0 && password.length > 0) {
       if (apiResponse.token) {
         updateAsyncStorage();
+        setIsUserLoggedIn(true);
+        set(true);
+
         Alert.alert("Zalogowano", "Pomyślnie zalogowano do konta!", [
           {
             text: "OK",
-            onPress: () => props.navigation.navigate("Home"),
+            // onPress: () => props.navigation.navigate("Home"),
             style: "cancel",
           },
         ]);

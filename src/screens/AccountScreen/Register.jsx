@@ -4,12 +4,14 @@ import {
   KeyboardAvoidingView,
   TextInput,
   TouchableHighlight,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import style from "./style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import CustomHrLine from "../../components/CustomHrLine/CustomHrLine";
 import CustomLoginBox from "../../components/CustomLoginBox/CustomLoginBox";
+import settings from "../../settings.json";
 
 const Register = ({ set2, props }) => {
   const [password, setPassword] = useState("");
@@ -23,21 +25,18 @@ const Register = ({ set2, props }) => {
   };
 
   const onRegisterPressHandler = () => {
-    const dataFetch = fetch(
-      `${settings.baseURL}/api/auth/register`,
-      {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify({
-          login: username,
-          password: password,
-          passwordConfirm: repeatedPassword,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    const dataFetch = fetch(`${settings.baseURL}//auth/register`, {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({
+        login: username,
+        password: password,
+        passwordConfirm: repeatedPassword,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.status)
       .then((data) => {
         setApiResponse(data);
@@ -59,7 +58,7 @@ const Register = ({ set2, props }) => {
           },
         ]
       );
-    } else {
+    } else if (apiResponse !== "") {
       Alert.alert(
         "Błąd logowania",
         "Hasło jest zbyt słabe bądź nie zgadzają się one.",

@@ -70,4 +70,35 @@ export default StyleSheet.create({
     marginTop: 16,
     fontSize: 20,
   },
+  settingsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: screenWidth - 48,
+    marginBottom: 16,
+  },
+  iconUserPanel: {
+    width: 28,
+    height: 28,
+    paddingRight: 20,
+    color: "red",
+  },
+  settingsText: {
+    paddingTop: 4,
+    marginLeft: 10,
+  },
+  iconUserPanelArrow: {
+    justifyContent: "flex-end",
+  },
+  viewWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    justifyContent: "space-between",
+  },
+  logoutText: {
+    color: "red",
+    fontSize: 16,
+  },
 });
