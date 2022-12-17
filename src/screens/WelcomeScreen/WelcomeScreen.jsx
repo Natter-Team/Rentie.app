@@ -7,13 +7,7 @@ const WelcomeScreen = () => {
   return (
     <Background>
         <View>
-            <Text>Popularne w okolicy</Text>
-            <ScrollView horizontal={true}>
-                <MiniCard id={"639d22efc0570043d0e254a5"} name={"aaa"} />
-                <MiniCard/>
-                <MiniCard/>
-                <MiniCard/>
-            </ScrollView>
+            
         </View>
     </Background>
   );
