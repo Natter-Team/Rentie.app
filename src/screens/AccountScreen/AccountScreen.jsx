@@ -3,18 +3,14 @@ import {
   Text,
   KeyboardAvoidingView,
   TextInput,
-  Button,
   TouchableHighlight,
   Alert,
-  Image,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Background from "../../components/Background/Background";
 import style, { localColors } from "./style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-import { local_colors } from "./style_AccountScreen";
 
 const AccountScreen = (props) => {
   const [password, setPassword] = useState("");
@@ -93,59 +89,54 @@ const AccountScreen = (props) => {
 
   return (
     <Background>
-      <View style={style.topBox}>
-        {/* <Image
-          source={require("../../../assets/projectLogo.png")}
-          style={{ marginLeft: 16, marginTop: 16 }}
-        /> */}
-      </View>
       {!isUserLoggedIn ? (
         <View style={style.contentContainer}>
           <Text style={style.header}>Zaloguj się</Text>
-          <KeyboardAvoidingView
-            behavior="position"
-            keyboardVerticalOffset={250}
-            style={style.keyboardView}
-          >
-            {/* <Text>Nazwa uzytkownika</Text> */}
-            <Ionicons
-              name="ios-person-outline"
-              size={28}
-              style={{
-                top: 40,
-                zIndex: 1,
-                left: 8,
-                width: 28,
-              }}
-            />
-            <TextInput
-              style={style.textInput}
-              onChangeText={(e) => setUsername(e)}
-              placeholder="Podaj nazwę użytkownika"
-            ></TextInput>
-            {/* <Text>Hasło</Text> */}
-            <Ionicons
-              name="ios-lock-closed-outline"
-              size={28}
-              style={{
-                top: 40,
-                zIndex: 1,
-                left: 8,
-                width: 28,
-              }}
-            />
-            <TextInput
-              style={style.textInput}
-              placeholder="Podaj hasło"
-              onChangeText={(e) => setPassword(e)}
-              secureTextEntry={true}
-            />
-            <TouchableHighlight>
+          <KeyboardAvoidingView behavior="position" style={style.keyboardView}>
+            <View style={{ position: "relative" }}>
+              <Text style={{ marginBottom: 15 }}>Nazwa uzytkownika</Text>
+              <Ionicons
+                name="ios-person-outline"
+                size={28}
+                style={{
+                  top: 40,
+                  zIndex: 1,
+                  left: 8,
+                  width: 28,
+                  position: "absolute",
+                }}
+              />
+              <TextInput
+                style={style.textInput}
+                onChangeText={(e) => setUsername(e)}
+                placeholder="Podaj nazwę użytkownika"
+              ></TextInput>
+            </View>
+            <View styl={{ position: "relative" }}>
+              <Text style={{ marginBottom: 15, marginTop: 10 }}>Hasło</Text>
+              <Ionicons
+                name="ios-lock-closed-outline"
+                size={28}
+                style={{
+                  top: 50,
+                  zIndex: 1,
+                  left: 8,
+                  width: 28,
+                  position: "absolute",
+                }}
+              />
+              <TextInput
+                style={style.textInput}
+                placeholder="Podaj hasło"
+                onChangeText={(e) => setPassword(e)}
+                secureTextEntry={true}
+              />
+            </View>
+            <TouchableHighlight style={style.confirmButton}>
               <Text
-                style={style.confirmButton}
+                style={style.confirmButtonText}
                 // onPress={(e) => onPressHandler(e)}
               >
-                {" "}
                 Zaloguj się
               </Text>
             </TouchableHighlight>
