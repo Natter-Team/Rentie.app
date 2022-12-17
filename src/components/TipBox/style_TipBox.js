@@ -10,6 +10,7 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: "#fff",
+        borderRadius: 6
     },
     tipBoxRight: {
         flex: 1,

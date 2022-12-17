@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions, TouchableWithoutFeedback } from "react-native";
 import { screenWidth, screenHeight } from "../../../assets/styles";
 
 export const localColors = {
-    fbColor: "#1877F2",
+    fbColor: "#1877F2", 
     appleColor: "#000",
 };
 
@@ -13,7 +13,7 @@ export default StyleSheet.create({
         justifyContent: "flex-start",
         //alignItems: "center",
         width: screenWidth,
-        //height: screenHeight,
+        height: screenHeight,
     },
     header: {
         alignSelf: "flex-start",
@@ -21,5 +21,8 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
-    
+    mainScroll: {
+        paddingTop: 5,
+        paddingBottom: 20,
+    }
 });
