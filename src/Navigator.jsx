@@ -29,6 +29,7 @@ const Navigator = () => {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Zakładki" component={WelcomeScreen} />
+        <Tab.Screen name="Koszyk" component={WelcomeScreen} />
         <Tab.Screen name="Wypożyczane" component={WelcomeScreen} />
         <Tab.Screen name="Konto" component={AccountScreen} />
       </Tab.Navigator>

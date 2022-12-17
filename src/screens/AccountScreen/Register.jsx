@@ -5,13 +5,13 @@ import {
   TextInput,
   TouchableHighlight,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import CustomHrLine from "../../components/CustomHrLine/CustomHrLine";
 import CustomLoginBox from "../../components/CustomLoginBox/CustomLoginBox";
 
-const Register = ({ set2 }) => {
+const Register = ({ set2, props }) => {
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -21,6 +21,58 @@ const Register = ({ set2 }) => {
     console.log("click");
     set2(true);
   };
+
+  const onRegisterPressHandler = () => {
+    const dataFetch = fetch(
+      `${settings.baseURL}/api/auth/register`,
+      {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify({
+          login: username,
+          password: password,
+          passwordConfirm: repeatedPassword,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.status)
+      .then((data) => {
+        setApiResponse(data);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+  useEffect(() => {
+    if (apiResponse === 201) {
+      Alert.alert(
+        "Zalogowano",
+        "Pomyślnie zarejestrowano konto! Możesz się teraz zalogować.",
+        [
+          {
+            text: "OK",
+            onPress: () => set2(true),
+            style: "cancel",
+          },
+        ]
+      );
+    } else {
+      Alert.alert(
+        "Błąd logowania",
+        "Hasło jest zbyt słabe bądź nie zgadzają się one.",
+        [
+          {
+            text: "OK",
+            style: "cancel",
+          },
+        ]
+      );
+    }
+  }, [apiResponse]);
+
   return (
     <View style={style.contentContainer}>
       <Text style={style.header}>Zarejestruj się</Text>
@@ -87,7 +139,7 @@ const Register = ({ set2 }) => {
         <TouchableHighlight style={style.confirmButton}>
           <Text
             style={style.confirmButtonText}
-            // onPress={(e) => onPressHandler(e)}
+            onPress={(e) => onRegisterPressHandler(e)}
           >
             Zarejestruj się
           </Text>

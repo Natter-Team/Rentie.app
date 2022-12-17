@@ -17,9 +17,9 @@ const AccountScreen = (props) => {
       {isUserLoggedIn ? (
         <Text>Zalogowany</Text>
       ) : isLoginPage ? (
-        <Login set={setIsUserLoggedIn} set2={setIsLoginPage} />
+        <Login set={setIsUserLoggedIn} set2={setIsLoginPage} props={props} />
       ) : (
-        <Register set2={setIsLoginPage} />
+            <Register set2={setIsLoginPage} props={props} />
       )}
     </Background>
   );
