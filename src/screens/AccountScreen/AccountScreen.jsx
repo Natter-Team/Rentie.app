@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import Background from "../../components/Background/Background";
 import style, { localColors } from "./style_AccountScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
+
 import { local_colors } from "./style_AccountScreen";
 
 const AccountScreen = ({ nav }) => {
