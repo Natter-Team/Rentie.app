@@ -14,7 +14,7 @@ export const colors = {
   inactive: "#000",
 };
 export const screenWidth = Dimensions.get("window").width;
-
+export const screenHeight = Dimensions.get("window").height;
 export default StyleSheet.create({
   wrapper: {
     flex: 1,

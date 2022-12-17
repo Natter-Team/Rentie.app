@@ -1,9 +1,13 @@
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { colors } from "../assets/styles";
 
 export const screenOptions = ({ route }) => ({
-  headerShown: false,
+  headerShown: true,
   animation: "slide_from_right",
+  tabBarColor: "white",
+  headerTitle: route.name,
+
   tabBarIcon: ({ focused, color }) => {
     let iconName;
 
@@ -17,6 +21,6 @@ export const screenOptions = ({ route }) => ({
       iconName = focused ? "ios-person" : "ios-person-outline";
     }
 
-    return <Ionicons name={iconName} size={24} color={color} />;
+    return <Ionicons name={iconName} size={28} color={color} />;
   },
 });
