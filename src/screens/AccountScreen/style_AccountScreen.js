@@ -74,7 +74,7 @@ export default StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#58ABE7",
     marginTop: 16,
-    textAlignVertical: "middle",
+    // textAlignVertical: "middle",
     fontSize: 20,
   },
 });
