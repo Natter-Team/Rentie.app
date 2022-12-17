@@ -2,13 +2,13 @@ import React from "react";
 import style from "./style_CategoriesCarousel";
 import {ScrollView, TouchableWithoutFeedback, Text} from "react-native";
 
-function CategoryButton({text, last}) {
+function CategoryButton({text, last, onPress}) {
     let textStyle = 
         last ? style.categoriesCarouselText
         : style.categoriesCarouselTextNoMargin;
 
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={onPress}>
             <Text style={textStyle}>{text}</Text>
         </TouchableWithoutFeedback>
     );
@@ -24,7 +24,7 @@ function CategoryPlaceholder({last}) {
     );
 }
 
-const CategoriesCarousel = ({categoryList}) => {
+const CategoriesCarousel = ({categoryList, navigation}) => {
     if (categoryList.length === 0) {
         return (
             <ScrollView style={style.categoriesCarousel} horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -37,7 +37,11 @@ const CategoriesCarousel = ({categoryList}) => {
     } else {
         return (
             <ScrollView style={style.categoriesCarousel} horizontal={true} showsHorizontalScrollIndicator={false}>
-                {categoryList.map((categoryName, i) => <CategoryButton text={categoryName} key={categoryName} last={(i + 1) === categoryList.length} />)}
+                {categoryList.map((categoryName, i) => <CategoryButton text={categoryName} key={categoryName} last={(i + 1) === categoryList.length} onPress={() => {
+                    navigation.push('HomeCategory', {
+                        category: categoryName
+                    });
+                }} />)}
             </ScrollView>
         ); 
     }

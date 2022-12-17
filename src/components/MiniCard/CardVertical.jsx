@@ -5,52 +5,41 @@ import settings from "../../settings.json";
 const style = StyleSheet.create({
     miniCard: {
         backgroundColor: '#fff',
-        width: 200,
-        height: 200,
+        height: 400,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
-        marginRight: 20,
-    },
-    miniCardFirst: {
-        backgroundColor: '#fff',
-        width: 200,
-        height: 200,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 6,
-        marginRight: 20,
-        marginLeft: 20,
+        margin: 20,
+        marginTop: 10,
+        marginBottom: 10,
+        display: "flex",
+        alignItems: "stretch",
+        paddingBottom: 20,
     },
     miniCardImage: {
-        minWidth: 200,
-        height: 150,
+        flex: 1,
         borderTopLeftRadius: 6,
         borderTopRightRadius: 6,
     },
     miniCardImagePlaceholder: {
         minWidth: 200,
-        height: 150,
+        height: 250,
         borderTopLeftRadius: 6,
         borderTopRightRadius: 6,
         backgroundColor: '#dfdfdf',
     },
     miniCardText: {
         fontSize: 16,
-        height: 25,
-        textAlign: 'left',
+        paddingTop: 20,
+        textAlign: 'center',
     },
 })
 
-export const MiniCard = (props) => {
+export const CardVertical = (props) => {
     const {id, name, price} = props;
-    const first = props.first || false;
-
-    const miniCardStyle = 
-        props.first ? style.miniCardFirst : style.miniCard;
 
     return (
-        <View style={miniCardStyle}>
+        <View style={style.miniCard}>
             <Image source={{uri: settings.baseURL + '/api/products/' + id + '/image'}} style={style.miniCardImage}/>
             <Text style={style.miniCardText}>{name}</Text>
             <Text style={style.miniCardText}>{price} zł</Text>
@@ -58,14 +47,9 @@ export const MiniCard = (props) => {
     );
 }
 
-export const MiniCardPlaceholder = (props) => {
-    const first = props.first || false;
-
-    const miniCardStyle = 
-        props.first ? style.miniCardFirst : style.miniCard;
-
+export const CardVerticalPlaceholder = (props) => {
     return (
-        <View style={miniCardStyle}>
+        <View style={style.miniCard}>
             <View style={style.miniCardImagePlaceholder}/>
             <Text style={style.miniCardText}></Text>
             <Text style={style.miniCardText}></Text>
@@ -73,23 +57,23 @@ export const MiniCardPlaceholder = (props) => {
     );
 }
 
-export const MiniCardCarousel = ({ miniCardList }) => {
+export const CardVerticalCarousel = ({ miniCardList }) => {
     if (miniCardList.length === 0) {
         return (
-            <ScrollView horizontal={true}>
-                <MiniCardPlaceholder first={true} />
-                <MiniCardPlaceholder />
-                <MiniCardPlaceholder />
-                <MiniCardPlaceholder />
+            <ScrollView>
+                <CardVerticalPlaceholder />
+                <CardVerticalPlaceholder />
+                <CardVerticalPlaceholder />
+                <CardVerticalPlaceholder />
             </ScrollView>
         );
     } else {
         return (
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View>
                 {miniCardList.map((card, i) => (
-                    <MiniCard id={card.id} key={card.id} name={card.name} price={card.price} first={i === 0} />
+                    <CardVertical id={card.id} key={card.id} name={card.name} price={card.price} />
                 ))}
-            </ScrollView>
+            </View>
         )
     }
 }
