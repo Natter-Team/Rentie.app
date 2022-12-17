@@ -7,16 +7,10 @@ export const localColors = {
 };
 
 export default StyleSheet.create({
-  topBox: {
-    height: 80,
-    backgroundColor: "#fff",
-    width: screenWidth,
-    fontSize: 28,
-  },
   header: {
     fontSize: 32,
-    paddingTop: 32,
-    paddingBottom: 32,
+    paddingTop: 24,
+    paddingBottom: 24,
     textAlign: "center",
   },
   customLoginBox: {
@@ -29,10 +23,10 @@ export default StyleSheet.create({
     borderRadius: 6,
     padding: 10,
     width: screenWidth - 48,
-    marginBottom: 25,
+    marginTop: 25,
   },
   horizontalLane: {
-    marginTop: 15,
+    marginTop: 25,
     width: screenWidth - 48,
     height: StyleSheet.hairlineWidth,
     backgroundColor: "#000",
@@ -45,7 +39,6 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   horizontalLaneContainer: {
-    // position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -62,15 +55,20 @@ export default StyleSheet.create({
     backgroundColor: "#fff",
     paddingLeft: 46,
   },
-  keyboardView: {
-    // height: 250,
-    width: screenWidth - 76,
-  },
   confirmButton: {
     color: "white",
     width: screenWidth - 76,
-    height: 32,
+    height: 52,
     borderRadius: 12,
+    textAlign: "center",
+    backgroundColor: "#58ABE7",
+    marginTop: 16,
+    // textAlignVertical: "middle",
+    fontSize: 20,
+  },
+  confirmButtonText: {
+    color: "white",
+    width: screenWidth - 76,
     textAlign: "center",
     backgroundColor: "#58ABE7",
     marginTop: 16,
